@@ -17,8 +17,7 @@ export default function Elevator() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 300);
-
+      setVisible(window.scrollY > 400);
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i].id);
         if (el) {
@@ -30,7 +29,6 @@ export default function Elevator() {
         }
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -43,9 +41,7 @@ export default function Elevator() {
 
   return (
     <div className="elevator-track hidden lg:flex">
-      {/* Elevator Line */}
-      <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[1px] bg-gradient-to-b from-transparent via-blue-500/20 to-transparent" />
-
+      <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[1px] bg-gradient-to-b from-transparent via-indigo-500/20 to-transparent" />
       {sections.map((section) => (
         <button
           key={section.id}
@@ -53,13 +49,8 @@ export default function Elevator() {
           className="relative group"
           title={`Andar ${section.floor}`}
         >
-          <div
-            className={`elevator-dot ${
-              active === section.id ? "active" : ""
-            }`}
-          />
-          {/* Tooltip */}
-          <span className="absolute right-8 top-1/2 -translate-y-1/2 bg-blue-600/90 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <div className={`elevator-dot ${active === section.id ? "active" : ""}`} />
+          <span className="absolute right-7 top-1/2 -translate-y-1/2 bg-indigo-600/90 backdrop-blur-sm text-white text-[11px] px-2.5 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-lg">
             {section.floor}F
           </span>
         </button>

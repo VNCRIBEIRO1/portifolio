@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pixel Code Studio | Portfolio de Desenvolvimento Web & PWA",
+  title: "Pixel Code Studio | Desenvolvimento Web & PWA Premium",
   description:
-    "Portfolio profissional de desenvolvimento web, sites modernos e sistemas PWA. Construindo soluções digitais sólidas como arranha-céus.",
+    "Construímos soluções digitais de alto impacto. Sites modernos, sistemas web escaláveis e aplicações PWA que transformam negócios.",
   keywords: [
     "desenvolvimento web",
     "PWA",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Pixel Code Studio" }],
   manifest: "/manifest.json",
   openGraph: {
-    title: "Pixel Code Studio | Portfolio",
+    title: "Pixel Code Studio | Desenvolvimento Web Premium",
     description:
-      "Construindo soluções digitais sólidas como arranha-céus. Portfolio de desenvolvimento web & PWA.",
+      "Construímos soluções digitais de alto impacto. Portfolio de desenvolvimento web & PWA.",
     url: "https://pixelcodestudio.vercel.app",
     siteName: "Pixel Code Studio",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#3b82f6",
+  themeColor: "#6366f1",
   width: "device-width",
   initialScale: 1,
 };
@@ -56,8 +56,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0a0a0f] text-[#e8e8ed]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="noise" />
         {children}
         <script
           dangerouslySetInnerHTML={{
